@@ -92,7 +92,7 @@ body {
     font-weight: normal;
     font-size: 1.6rem;
     line-height: 1;
-    background: url(../img/background.png) center center / cover no-repeat;
+    background: url(../img/background.jpg) center center / cover no-repeat;
     min-width: 1920px;
 }
 body::-webkit-scrollbar {
