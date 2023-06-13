@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('font/Binggrae-BoldA1.eot');
+    src: url('font/Binggrae-BoldA1.eot?#iefix') format('embedded-opentype'),
+        url('font/Binggrae-BoldA1.woff2') format('woff2'),
+        url('font/Binggrae-BoldA1.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('font/Inter-Bold.eot');
+    src: url('font/Inter-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/Inter-Bold.woff2') format('woff2'),
+        url('font/Inter-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Medium.eot');
+    src: url('Inter-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Inter-Medium.woff2') format('woff2'),
+        url('Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('font/20220316_NaverBD-ExtraBold.eot');
+    src: url('font/20220316_NaverBD-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('font/20220316_NaverBD-ExtraBold.woff2') format('woff2'),
+        url('font/20220316_NaverBD-ExtraBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('font/20220316_NaverBD-Bold.eot');
+    src: url('font/20220316_NaverBD-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/20220316_NaverBD-Bold.woff2') format('woff2'),
+        url('font/20220316_NaverBD-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('font/20220316_NaverBD-Regular.eot');
+    src: url('font/20220316_NaverBD-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/20220316_NaverBD-Regular.woff2') format('woff2'),
+        url('font/20220316_NaverBD-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('font/20220316_NaverBD-Light.eot');
+    src: url('font/20220316_NaverBD-Light.eot?#iefix') format('embedded-opentype'),
+        url('font/20220316_NaverBD-Light.woff2') format('woff2'),
+        url('font/20220316_NaverBD-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    color: #333;
+    font-family: 'NanumSquareNeo';
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1;
+    background: url(../img/background.png) center center / cover no-repeat;
+    min-width: 1920px;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.inner {
+    max-width: 1560px;
+    width: calc(100% - 240px);
+    margin: 0 auto;
+}
+h2 {
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 9rem;
+    margin-bottom: 1.5rem;
+}
