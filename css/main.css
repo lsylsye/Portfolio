@@ -441,7 +441,7 @@ header ul li.on {
 
 .web .inner .info {
     position: absolute;
-    top: 250px;
+    top: 200px;
     right: 350px;
 }
 
@@ -475,7 +475,7 @@ header ul li.on {
 .container {
     width: 900px;
     position: absolute;
-    top: 28vh;
+    top: 25vh;
     left: 51%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -580,7 +580,7 @@ header ul li.on {
     width: 200px;
     height: 344px;
     position: absolute;
-    bottom: 13rem;
+    bottom: 17rem;
     left: 23vw;
     cursor: pointer;
 }
@@ -669,11 +669,13 @@ header ul li.on {
 }
 
 .swiper-button-next {
-    right: 15vw;
+    top: 45%;
+    right: 19.5vw;
 }
 
 .swiper-button-prev {
-    left: 15vw;
+    top: 45%;
+    left: 19.5vw;
 }
 
 .swiper-button-next:after,
