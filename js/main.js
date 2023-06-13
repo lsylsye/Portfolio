@@ -60,21 +60,16 @@ $(function () {
   let closeBtn = $('.xi-close');
   let detailPage = $('.detail');
   let bg = $('.click_bg');
-  let webScrollPosition = 0;
 
-  detailBtn.on('click', function (e) {
-    e.preventDefault();
-    webScrollPosition = $(window).scrollTop();
+  detailBtn.on('click', function () {
     detailPage.css('display', 'block');
     bg.addClass('on');
-    $(window).scrollTop(webScrollPosition);
   });
 
   //상세페이지 닫기
   closeBtn.on('click', function () {
     detailPage.css('display', 'none');
     bg.removeClass('on');
-    $(window).scrollTop(webScrollPosition);
   });
 
   bg.click(function () {
@@ -147,22 +142,16 @@ $(function () {
   let closeBtn2 = $('.detail2 .xi-close');
   let juicyPage = $('.detail2.juicy');
   let emartPage = $('.detail2.emart24');
-  let mobileScrollPosition = 0;
 
-  juicyBtn.on('click', function (e) {
-    e.preventDefault();
-    mobileScrollPosition = $(window).scrollTop();
+
+  juicyBtn.on('click', function () {
     juicyPage.css('display', 'block');
     bg.addClass('on');
-    $(window).scrollTop(mobileScrollPosition);
   });
 
-  emartBtn.on('click', function (e) {
-    e.preventDefault();
-    mobileScrollPosition = $(window).scrollTop();
+  emartBtn.on('click', function () {
     emartPage.css('display', 'block');
     bg.addClass('on');
-    $(window).scrollTop(mobileScrollPosition);
   });
 
   //상세페이지 닫기
@@ -170,8 +159,8 @@ $(function () {
     juicyPage.css('display', 'none');
     emartPage.css('display', 'none');
     bg.removeClass('on');
-    $(window).scrollTop(mobileScrollPosition);
   });
+  
   bg.click(function () {
     if (juicyPage.css('display') == 'block' || emartPage.css('display') == 'block') {
       juicyPage.css('display', 'none');
