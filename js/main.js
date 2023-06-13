@@ -191,7 +191,13 @@ $(function () {
     let circle1 = $('.loading .rectangle img:nth-child(6)');
     let circle2 = $('.loading .rectangle img:nth-child(7)');
     let circle3 = $('.loading .rectangle img:nth-child(8)');
+    let shadow = $('.shadow');
 
+    if ($('.loading').offset().top < scrollBar) {
+      shadow.css('display', 'none');
+    } else {
+      shadow.css('display', 'block');
+    }
     if ($('.loading').offset().top + 1050 < scrollBar) {
       loadingBox.addClass('on');
       loadingBtn.addClass('on');
@@ -218,7 +224,7 @@ $(function () {
       circle2.removeClass('on');
       circle3.removeClass('on');
     }
-    
+
     //헤더 나타나기
     if ($('.about').offset().top - 350 < scrollBar) {
       $('header').css('display', 'block');
