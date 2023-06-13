@@ -444,7 +444,9 @@ header ul li.on {
     top: 200px;
     right: 350px;
 }
-
+.detail_btn2 {
+    cursor: pointer;
+}
 .web .inner .info img {
     width: 74px;
     object-fit: cover;
@@ -454,7 +456,9 @@ header ul li.on {
     font-size: 1.4rem;
     text-align: center;
 }
-
+.detail_btn {
+    cursor: pointer;
+}
 .title p {
     position: relative;
 }
@@ -1163,6 +1167,14 @@ header ul li.on {
     padding: 30px 15px 30px 30px;
     z-index: 99;
     display: none;
+}
+
+.interest .interestDetail .xi-close {
+    font-size: 20px;
+    position: sticky;
+    float: right;
+    top: 0;
+    cursor: pointer;
 }
 
 .interestDetail img {
