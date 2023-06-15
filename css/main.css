@@ -315,19 +315,20 @@ header ul li.on {
     box-shadow: 0 3px 25px rgb(135, 166, 244, 0.7);
     margin-right: 8rem;
     cursor: pointer;
+    transition: 1s;
 }
 
 .about .inner>.item ul li:last-child {
     margin-right: 0;
 }
 
-.about .inner>.item ul li:hover {
+.about .inner>.item ul li.on {
     position: relative;
     overflow: hidden;
     background-color: #9fbaff;
 }
 
-.about .inner>.item ul li:hover::before {
+.about .inner>.item ul li.on::before {
     content: '';
     background-color: #fff;
     width: 100%;
@@ -337,17 +338,19 @@ header ul li.on {
     left: 0;
 }
 
-.about .inner>.item ul li:first-child:hover::before,
-.about .inner>.item ul li:nth-child(2):hover::before,
-.about .inner>.item ul li:nth-child(4):hover::before {
-    animation: moveUp70 1s;
+.about .inner>.item ul li.on:first-child::before,
+.about .inner>.item ul li.on:nth-child(2)::before,
+.about .inner>.item ul li.on:nth-child(4)::before {
+    animation: moveUp70 1.5s;
     animation-fill-mode: forwards;
+    transition: 1s;
 }
 
-.about .inner>.item ul li:nth-child(3):hover::before,
-.about .inner>.item ul li:nth-child(5):hover::before {
-    animation: moveUp50 1s;
+.about .inner>.item ul li.on:nth-child(3)::before,
+.about .inner>.item ul li.on:nth-child(5)::before {
+    animation: moveUp50 1.5s;
     animation-fill-mode: forwards;
+    transition: 1s;
 }
 
 @keyframes moveUp70 {
@@ -406,14 +409,14 @@ header ul li.on {
     content: 'illustrator';
 }
 
-.about .inner>.item ul li:first-child:hover::after,
-.about .inner>.item ul li:nth-child(2):hover::after,
-.about .inner>.item ul li:nth-child(4):hover::after {
+.about .inner>.item ul li.on:first-child::after,
+.about .inner>.item ul li.on:nth-child(2)::after,
+.about .inner>.item ul li.on:nth-child(4)::after {
     content: '70%';
 }
 
-.about .inner>.item ul li:nth-child(3):hover::after,
-.about .inner>.item ul li:nth-child(5):hover::after {
+.about .inner>.item ul li.on:nth-child(3)::after,
+.about .inner>.item ul li.on:nth-child(5)::after {
     content: '50%';
     color: #9fbaff;
 }
@@ -422,6 +425,14 @@ header ul li.on {
     margin-top: 250px;
     text-align: right;
     line-height: 2.2;
+    transform: translateX(600px);
+    opacity: 0;
+    transition: 1.5s;
+}
+.about .inner .text.on {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1.5s;
 }
 
 .about>figure {
