@@ -221,7 +221,19 @@ $(function () {
       $('header').css('display', 'none');
     }
 
+    //about 스크롤 이벤트
+    let skill = $('.about .inner>.item ul li');
+    if ($('.about').offset().top + 1250 < scrollBar) {
+      skill.addClass('on');
+    } else {
+      skill.removeClass('on');
+    } //스킬
 
+    if (skill.offset().top - 300 < scrollBar) {
+      $('.text').addClass('on');
+    } else {
+      $('.text').removeClass('on');
+    } //텍스트
 
     // design 포스터 교차 스크롤
     let poster = $('.poster .list .item');
@@ -252,9 +264,9 @@ $(function () {
     let interestBtn = $('.interest_btn');
     let interestPage = $('.interestDetail');
     let pageImg = $('.interestDetail img');
-    let img1 = 'img/web_vogue_detail.png';
-    let img2 = 'img/mobile_juicy_detail.png';
-    let img3 = 'img/web_seoulmilk_detail.png';
+    let img1 = 'img/interest_inner_1.png';
+    let img2 = 'img/interest_inner_2.png';
+    let img3 = 'img/interest_inner_3.png';
     let closeBtn3 = $('.interestDetail .xi-close');
     let interestScrollPosition = 0;
 
