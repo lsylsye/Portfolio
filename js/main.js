@@ -12,7 +12,7 @@ $(function () {
     let contPageTop = contPage.offset().top;
 
     $('html, body').animate({
-      scrollTop: contPageTop - 120
+      scrollTop: contPageTop - 180
     }, 800, 'linear')
   }) // menu.click()
 
@@ -20,11 +20,11 @@ $(function () {
   $(window).scroll(function () {
     let scrollBar = $(window).scrollTop();
 
-    if ($('.about').offset().top - 120 <= scrollBar) {
+    if ($('.about').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(0).addClass('on');
     } else menu.removeClass('on');
-    if ($('.web').offset().top - 130 <= scrollBar) {
+    if ($('.web').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(1).addClass('on');
     }
@@ -32,15 +32,15 @@ $(function () {
       menu.removeClass('on');
       menu.eq(2).addClass('on');
     }
-    if ($('.design').offset().top - 130 <= scrollBar) {
+    if ($('.design').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(3).addClass('on');
     }
-    if ($('.interest').offset().top - 180 <= scrollBar) {
+    if ($('.interest').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(4).addClass('on');
     }
-    if ($('footer').offset().top - 120 <= scrollBar) {
+    if ($('footer').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(5).addClass('on');
     }
@@ -211,7 +211,7 @@ $(function () {
       $('.about').removeClass('on');
     }
 
-    if ($('.loading').offset().top + 1100 < scrollBar) {
+    if ($('.loading').offset().top + 1000 < scrollBar) {
       circle1.addClass('on');
       circle2.addClass('on');
       circle3.addClass('on');
@@ -267,7 +267,7 @@ $(function () {
       designTitle.removeClass('on');
     }
     //interest 나타나기
-    if ($('.interest').offset().top - 900 < scrollBar) {
+    if ($('.interest').offset().top - 1000 < scrollBar) {
       $('.interest').addClass('on');
     } else {
       $('.interest').removeClass('on');
