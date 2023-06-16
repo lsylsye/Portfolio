@@ -12,7 +12,7 @@ $(function () {
     let contPageTop = contPage.offset().top;
 
     $('html, body').animate({
-      scrollTop: contPageTop - 80
+      scrollTop: contPageTop - 120
     }, 800, 'linear')
   }) // menu.click()
 
@@ -28,11 +28,11 @@ $(function () {
       menu.removeClass('on');
       menu.eq(1).addClass('on');
     }
-    if ($('.mobile').offset().top + 350 <= scrollBar) {
+    if ($('.mobile').offset().top - 200 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(2).addClass('on');
     }
-    if ($('.design').offset().top - 100 <= scrollBar) {
+    if ($('.design').offset().top - 130 <= scrollBar) {
       menu.removeClass('on');
       menu.eq(3).addClass('on');
     }
@@ -64,18 +64,21 @@ $(function () {
   detailBtn.on('click', function () {
     detailPage.css('display', 'block');
     bg.addClass('on');
+    $('header').css('display', 'none');
   });
 
   //상세페이지 닫기
   closeBtn.on('click', function () {
     detailPage.css('display', 'none');
     bg.removeClass('on');
+    $('header').css('display', 'block');
   });
 
   bg.click(function () {
     if (detailPage.css('display') == 'block') {
-      detailPage.css('display', 'none');
+      detailPage.css('display','none');
       bg.removeClass('on');
+      $('header').css('display','block');
     }
   });
 
@@ -147,11 +150,13 @@ $(function () {
   juicyBtn.on('click', function () {
     juicyPage.css('display', 'block');
     bg.addClass('on');
+    $('header').css('display', 'none');
   });
 
   emartBtn.on('click', function () {
     emartPage.css('display', 'block');
     bg.addClass('on');
+    $('header').css('display', 'none');
   });
 
   //상세페이지 닫기
@@ -159,6 +164,7 @@ $(function () {
     juicyPage.css('display', 'none');
     emartPage.css('display', 'none');
     bg.removeClass('on');
+    $('header').css('display', 'block');
   });
   
   bg.click(function () {
@@ -166,6 +172,7 @@ $(function () {
       juicyPage.css('display', 'none');
       emartPage.css('display', 'none');
       bg.removeClass('on');
+      $('header').css('display', 'block');
     }
   });
 
@@ -190,21 +197,21 @@ $(function () {
     if ($('.loading').offset().top + 1050 < scrollBar) {
       loadingBox.addClass('on');
       loadingBtn.addClass('on');
-      loadingBox.css('position', 'static');
     } else {
       loadingBox.removeClass('on');
       loadingBtn.removeClass('on');
-      loadingBox.css('position', 'fixed');
     }
     if ($('.loading').offset().top + 1300 < scrollBar) {
       loadingBtn.css('position', 'static');
       loadingBox.css('position', 'static');
+      $('.about').addClass('on');
     } else {
       loadingBox.css('position', 'fixed');
       loadingBtn.css('position', 'fixed');
+      $('.about').removeClass('on');
     }
 
-    if ($('.about').offset().top - 1600 < scrollBar) {
+    if ($('.loading').offset().top + 1100 < scrollBar) {
       circle1.addClass('on');
       circle2.addClass('on');
       circle3.addClass('on');
@@ -222,11 +229,13 @@ $(function () {
     }
 
     //about 스크롤 이벤트
-    let skill = $('.about .inner>.item ul li');
-    if ($('.about').offset().top + 1250 < scrollBar) {
-      skill.addClass('on');
+    let skill = $('.about .inner>.item .skill');
+    let circle = $('.skill .box svg circle');
+
+    if ($('.about').offset().top + 500 < scrollBar) {
+      circle.addClass('on');
     } else {
-      skill.removeClass('on');
+      circle.removeClass('on');
     } //스킬
 
     if (skill.offset().top - 300 < scrollBar) {
@@ -234,6 +243,35 @@ $(function () {
     } else {
       $('.text').removeClass('on');
     } //텍스트
+
+
+    //web 나타나기
+    let slider = $('.swiper.website');
+
+    if (slider.offset().top - 900 < scrollBar) {
+      slider.addClass('on');
+    } else {
+      slider.removeClass('on');
+    }
+    //mobile 나타나기
+    if ($('.mobile').offset().top - 1000 < scrollBar) {
+      $('.mobile').addClass('on');
+    } else {
+      $('.mobile').removeClass('on');
+    }
+    //design 나타나기
+    let designTitle = $('.design .title');
+    if ($('.design').offset().top - 900 < scrollBar) {
+      designTitle.addClass('on');
+    } else {
+      designTitle.removeClass('on');
+    }
+    //interest 나타나기
+    if ($('.interest').offset().top - 900 < scrollBar) {
+      $('.interest').addClass('on');
+    } else {
+      $('.interest').removeClass('on');
+    }
 
     // design 포스터 교차 스크롤
     let poster = $('.poster .list .item');
@@ -268,31 +306,24 @@ $(function () {
     let img2 = 'img/interest_inner_2.png';
     let img3 = 'img/interest_inner_3.png';
     let closeBtn3 = $('.interestDetail .xi-close');
-    let interestScrollPosition = 0;
 
-    interestBtn.eq(0).on('click', function (e) {
-      e.preventDefault();
-      interestScrollPosition = $(window).scrollTop();
+    interestBtn.eq(0).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img1);
       bg.addClass('on');
-      $(window).scrollTop(interestScrollPosition);
+      $('header').css('display', 'none');
     });
-    interestBtn.eq(1).on('click', function (e) {
-      e.preventDefault();
-      interestScrollPosition = $(window).scrollTop();
+    interestBtn.eq(1).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img2);
       bg.addClass('on');
-      $(window).scrollTop(interestScrollPosition);
+      $('header').css('display', 'none');
     });
-    interestBtn.eq(2).on('click', function (e) {
-      e.preventDefault();
-      interestScrollPosition = $(window).scrollTop();
+    interestBtn.eq(2).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img3);
       bg.addClass('on');
-      $(window).scrollTop(interestScrollPosition);
+      $('header').css('display', 'none');
     });
 
     //상세페이지 닫기
@@ -301,12 +332,14 @@ $(function () {
       if (interestPage.css('display') == 'block') {
         interestPage.css('display', 'none');
         bg.removeClass('on');
+        $('header').css('display', 'block');
       }
     });
     bg.click(function () {
       if (interestPage.css('display') == 'block') {
         interestPage.css('display', 'none');
         bg.removeClass('on');
+        $('header').css('display', 'block');
       }
     });
 
