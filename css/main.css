@@ -19,7 +19,7 @@
 .loading {
     width: 100%;
     height: 100vh;
-    margin-bottom: 163rem;
+    margin-bottom: 123rem;
     position: relative;
     opacity: 1;
     transition: opacity 0.5s;
@@ -62,21 +62,21 @@
     top: 100rem;
     right: 0rem;
     opacity: 1;
-    transition: 1.2s;
+    transition: 2s;
 }
 .loading .rectangle img:nth-child(7) {
     position: absolute;
     top: 130rem;
     left: 10rem;
     opacity: 1;
-    transition: 1.2s;
+    transition: 2s;
 }
 .loading .rectangle img:nth-child(8) {
     position: absolute;
     top: 145rem;
     right: 60rem;
     opacity: 1;
-    transition: 1.2s;
+    transition: 2s;
 }
 .loading .rectangle img:nth-child(6).on {
     opacity: 0;
@@ -223,6 +223,12 @@ header ul li.on {
     width: 100%;
     margin: 150px 0 370px auto;
     position: relative;
+    transform: translateY(3000px);
+    transition: 1.5s;
+}
+.about.on {
+    transform: translateY(0);
+    transition: 2s;
 }
 .about .inner .title {
     max-width: 560px;
@@ -241,7 +247,6 @@ header ul li.on {
 .about .inner .title img:last-child {
     animation: moveImage 2s infinite;
 }
-
 
 .about .inner .list {
     width: 100%;
@@ -301,126 +306,98 @@ header ul li.on {
 .about .inner>.item figure {
     margin-bottom: 7rem;
 }
-
-.about .inner>.item ul {
+.about .inner>.item .skill {
     display: flex;
     justify-content: center;
 }
-
-.about .inner>.item ul li {
-    width: 177px;
-    height: 177px;
-    background: linear-gradient(35deg, #87A6F4, #C3D1FD);
-    border-radius: 50%;
-    box-shadow: 0 3px 25px rgb(135, 166, 244, 0.7);
+.skill .box {
+    width: 170px;
+    height: 170px;
+    position: relative;
     margin-right: 8rem;
-    cursor: pointer;
-    transition: 1s;
 }
-
-.about .inner>.item ul li:last-child {
+.skill .box:last-of-type {
     margin-right: 0;
 }
-
-.about .inner>.item ul li.on {
-    position: relative;
-    overflow: hidden;
-    background-color: #9fbaff;
-}
-
-.about .inner>.item ul li.on::before {
-    content: '';
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.about .inner>.item ul li.on:first-child::before,
-.about .inner>.item ul li.on:nth-child(2)::before,
-.about .inner>.item ul li.on:nth-child(4)::before {
-    animation: moveUp70 1.5s;
-    animation-fill-mode: forwards;
-    transition: 1s;
-}
-
-.about .inner>.item ul li.on:nth-child(3)::before,
-.about .inner>.item ul li.on:nth-child(5)::before {
-    animation: moveUp50 1.5s;
-    animation-fill-mode: forwards;
-    transition: 1s;
-}
-
-@keyframes moveUp70 {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-70%);
-    }
-}
-
-@keyframes moveUp50 {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-47%);
-    }
-}
-
-/* 텍스트 변경 */
-.about .inner>.item ul li {
-    position: relative;
-}
-
-.about .inner>.item ul li::after {
-    content: '';
-    font-family: 'Binggrae';
-    color: #fff;
-    font-size: 2.2rem;
+.skill .box p {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Binggrae';
+    color: #87A6F4;
+    font-size: 2rem;
+}
+.skill .box svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    box-shadow: 0 3px 25px rgb(135, 166, 244, 0.7);
+    border-radius: 50%;
+}
+.skill .box svg circle {
+    stroke-width: 20;
+    fill: none;
+    stroke: #87A6F4;
+    stroke-linecap: round;
+    stroke-dasharray: 540;
+}
+.skill .box:nth-of-type(1) svg circle.on {
+    animation: stroke1 1.6s linear forwards;
+}
+.skill .box:nth-of-type(2) svg circle.on {
+    animation: stroke2 1.8s linear forwards;
+}
+.skill .box:nth-of-type(3) svg circle.on {
+    animation: stroke3 1.2s linear forwards;
+}
+.skill .box:nth-of-type(4) svg circle.on {
+    animation: stroke4 1.4s linear forwards;
+}
+.skill .box:nth-of-type(5) svg circle.on {
+    animation: stroke5 1s linear forwards;
 }
 
-.about .inner>.item ul li:first-child::after {
-    content: 'html';
-}
-
-.about .inner>.item ul li:nth-child(2)::after {
-    content: 'css';
-}
-
-.about .inner>.item ul li:nth-child(3)::after {
-    content: 'javascript';
-}
-
-.about .inner>.item ul li:nth-child(4)::after {
-    content: 'photoshop';
-}
-
-.about .inner>.item ul li:nth-child(5)::after {
-    content: 'illustrator';
-}
-
-.about .inner>.item ul li.on:first-child::after,
-.about .inner>.item ul li.on:nth-child(2)::after,
-.about .inner>.item ul li.on:nth-child(4)::after {
-    content: '70%';
-}
-
-.about .inner>.item ul li.on:nth-child(3)::after,
-.about .inner>.item ul li.on:nth-child(5)::after {
-    content: '50%';
-    color: #9fbaff;
-}
-
+@keyframes stroke1 {
+    0% {
+      stroke-dashoffset: 540;
+    }
+    100% {
+      stroke-dashoffset: 110;
+    }
+  }
+@keyframes stroke2 {
+    0% {
+      stroke-dashoffset: 540;
+    }
+    100% {
+      stroke-dashoffset: 90;
+    }
+  }
+@keyframes stroke3 {
+    0% {
+      stroke-dashoffset: 540;
+    }
+    100% {
+      stroke-dashoffset: 200;
+    }
+  }
+@keyframes stroke4 {
+    0% {
+      stroke-dashoffset: 540;
+    }
+    100% {
+      stroke-dashoffset: 160;
+    }
+  }
+@keyframes stroke5 {
+    0% {
+      stroke-dashoffset: 540;
+    }
+    100% {
+      stroke-dashoffset: 230;
+    }
+  }
 .about .inner .text {
     margin-top: 250px;
     text-align: right;
@@ -443,6 +420,15 @@ header ul li.on {
 }
 
 /*******💌web💌 *******/
+
+.swiper.website {
+    transform: scale(0.8);
+    transition: 1s;
+}
+.swiper.website.on {
+    transform: scale(1);
+    transition: 1.5s;
+}
 .web {
     width: 100%;
     height: 100vh;
@@ -614,7 +600,7 @@ header ul li.on {
     object-fit: cover;
 }
 
-.container_mo .mobile {
+.container_mo .ios {
     width: 100%;
     height: 355px;
     display: flex;
@@ -623,7 +609,7 @@ header ul li.on {
     position: relative;
 }
 
-.container_mo .mobile figure {
+.container_mo .ios figure {
     width: 68%;
     height: 80%;
     overflow-y: scroll;
@@ -633,17 +619,17 @@ header ul li.on {
     left: 0;
 }
 
-.container_mo .mobile figure::-webkit-scrollbar {
+.container_mo .ios figure::-webkit-scrollbar {
     display: none;
 }
 
-.container_mo .mobile figure img {
+.container_mo .ios figure img {
     width: 100%;
     height: auto;
     overflow: hidden;
 }
 
-.container_mo .mobile .bg {
+.container_mo .ios .bg {
     position: absolute;
     top: 20%;
     left: 0;
@@ -659,7 +645,7 @@ header ul li.on {
     z-index: -1;
 }
 
-.container_mo .mobile .bg::before {
+.container_mo .ios .bg::before {
     content: '';
     width: 22px;
     height: 43px;
@@ -671,7 +657,7 @@ header ul li.on {
     transform: translate(-50%, -50%);
 }
 
-.container_mo .mobile .bg::after {
+.container_mo .ios .bg::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -745,7 +731,7 @@ header ul li.on {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0, 0.7);
     z-index: 1;
     display: none;
 }
@@ -754,15 +740,18 @@ header ul li.on {
 }
 
 
-
-
-
 /*******💌mobile💌 *******/
 .mobile {
     width: 100%;
     height: auto;
     margin-bottom: 15rem;
     position: relative;
+    transform: scale(0.8);
+    transition: 1s;
+}
+.mobile.on {
+    transform: scale(1);
+    transition: 1.5s;
 }
 .mobile .inner .title {
     text-align: right;
@@ -945,6 +934,12 @@ header ul li.on {
 .design .title {
     text-align: center;
     margin-bottom: 5rem;
+    transform: scale(0.8);
+    transition: 1s;
+}
+.design .title.on {
+    transform: scale(1);
+    transition: 1.5s;
 }
 
 .design .sns {
@@ -1122,6 +1117,12 @@ header ul li.on {
     width: 100%;
     position: relative;
     margin-bottom: 25rem;
+    transform: scale(0.8);
+    transition: 1s;
+}
+.interest.on {
+    transform: scale(1);
+    transition: 1.5s;
 }
 
 .interest .title {
@@ -1263,7 +1264,7 @@ footer .rectangle img:first-child {
 footer .rectangle img:nth-child(2) {
     position: absolute;
     top: 30rem;
-    left: 3rem;
+    left: -3rem;
 }
 
 footer .rectangle img:nth-child(3) {
@@ -1285,7 +1286,7 @@ footer .rectangle img:nth-child(5) {
 }
 footer .rectangle img:nth-child(6) {
     position: absolute;
-    top: 7rem;
+    top: 0rem;
     left: 60rem;
 }
 footer .copyright {
