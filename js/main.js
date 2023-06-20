@@ -64,21 +64,18 @@ $(function () {
   detailBtn.on('click', function () {
     detailPage.css('display', 'block');
     bg.addClass('on');
-    $('header').css('display', 'none');
   });
 
   //상세페이지 닫기
   closeBtn.on('click', function () {
     detailPage.css('display', 'none');
     bg.removeClass('on');
-    $('header').css('display', 'block');
   });
 
   bg.click(function () {
     if (detailPage.css('display') == 'block') {
       detailPage.css('display','none');
       bg.removeClass('on');
-      $('header').css('display','block');
     }
   });
 
@@ -145,18 +142,19 @@ $(function () {
   let closeBtn2 = $('.detail2 .xi-close');
   let juicyPage = $('.detail2.juicy');
   let emartPage = $('.detail2.emart24');
+  let mobileInner = $('.mobile .inner');
 
 
   juicyBtn.on('click', function () {
     juicyPage.css('display', 'block');
     bg.addClass('on');
-    $('header').css('display', 'none');
+    mobileInner.css('opacity', '0');
   });
 
   emartBtn.on('click', function () {
     emartPage.css('display', 'block');
     bg.addClass('on');
-    $('header').css('display', 'none');
+    mobileInner.css('opacity', '0');
   });
 
   //상세페이지 닫기
@@ -164,7 +162,7 @@ $(function () {
     juicyPage.css('display', 'none');
     emartPage.css('display', 'none');
     bg.removeClass('on');
-    $('header').css('display', 'block');
+    mobileInner.css('opacity', '1');
   });
   
   bg.click(function () {
@@ -172,7 +170,7 @@ $(function () {
       juicyPage.css('display', 'none');
       emartPage.css('display', 'none');
       bg.removeClass('on');
-      $('header').css('display', 'block');
+      mobileInner.css('opacity', '1');
     }
   });
 
@@ -229,7 +227,6 @@ $(function () {
     }
 
     //about 스크롤 이벤트
-    let skill = $('.about .inner>.item .skill');
     let circle = $('.skill .box svg circle');
 
     if ($('.about').offset().top + 500 < scrollBar) {
@@ -237,13 +234,6 @@ $(function () {
     } else {
       circle.removeClass('on');
     } //스킬
-
-    if (skill.offset().top - 300 < scrollBar) {
-      $('.text').addClass('on');
-    } else {
-      $('.text').removeClass('on');
-    } //텍스트
-
 
     //web 나타나기
     let slider = $('.swiper.website');
@@ -306,24 +296,25 @@ $(function () {
     let img2 = 'img/interest_inner_2.png';
     let img3 = 'img/interest_inner_3.png';
     let closeBtn3 = $('.interestDetail .xi-close');
+    let interestInner = $('.interest .inner');
 
     interestBtn.eq(0).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img1);
       bg.addClass('on');
-      $('header').css('display', 'none');
+      interestInner.css('opacity', '0');
     });
     interestBtn.eq(1).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img2);
       bg.addClass('on');
-      $('header').css('display', 'none');
+      interestInner.css('opacity', '0');
     });
     interestBtn.eq(2).on('click', function () {
       interestPage.css('display', 'block');
       pageImg.attr('src', img3);
       bg.addClass('on');
-      $('header').css('display', 'none');
+      interestInner.css('opacity', '0');
     });
 
     //상세페이지 닫기
@@ -332,14 +323,14 @@ $(function () {
       if (interestPage.css('display') == 'block') {
         interestPage.css('display', 'none');
         bg.removeClass('on');
-        $('header').css('display', 'block');
+        interestInner.css('opacity', '1');
       }
     });
     bg.click(function () {
       if (interestPage.css('display') == 'block') {
         interestPage.css('display', 'none');
         bg.removeClass('on');
-        $('header').css('display', 'block');
+        interestInner.css('opacity', '1');
       }
     });
 
