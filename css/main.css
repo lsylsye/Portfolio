@@ -1284,12 +1284,38 @@ footer .rectangle img:nth-child(6) {
 }
 footer .copyright {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 25px;
+    right: 25px;
     text-align: right;
     letter-spacing: -0.7px;
 }
 footer .copyright p:first-of-type {
     font-size: 1.4rem;
     margin-bottom: 10px;
+}
+footer .download {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    text-align: center;
+    letter-spacing: -0.7px;
+    display: flex;
+}
+footer .download div {
+    font-size: 1.4rem;
+    width: 70px;
+    height: 58px;
+    border-radius: 10px;
+    margin-right: 5px;
+    transition: 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .download div img {
+    margin-bottom: 4px;
+}
+footer .download div:hover {
+    background-color: rgb(135, 166, 244, 0.6);
+    transition: 0.8s;
 }
